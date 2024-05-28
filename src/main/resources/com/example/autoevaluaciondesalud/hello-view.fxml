@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.autoevaluaciondesalud.HelloController">
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+  </padding>
+  <children>
+    <MenuBar>
+      <menus>
+        <Menu text="Opciones">
+          <items>
+            <MenuItem text="Salir" onAction="#salir"/>
+          </items>
+        </Menu>
+        <Menu text="Acerca de">
+          <items>
+            <MenuItem text="Acerca de" onAction="#about"/>
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <Label fx:id="etiquetaFecha" text="Fecha"/>
+    <TextField fx:id="campoEstadoDeAnimo" promptText="Estado de ánimo (0-5)"/>
+    <TextField fx:id="campoEstadoFisico" promptText="Estado físico (0-5)"/>
+    <VBox fx:id="vboxAlimentos" alignment="CENTER_LEFT"/>
+    <Button text="Añadir Datos" onAction="#agregarDatos"/>
+    <Button text="Ver Estadísticas" onAction="#mostrarEstadisticas"/>
+    <TabPane fx:id="tabPane">
+      <tabs>
+        <Tab text="Estadísticas" closable="false">
+          <TextArea fx:id="areaEstadisticas" editable="false" wrapText="true" promptText="Las estadísticas se muestran aquí" />
+        </Tab>
+        <Tab text="Gráfico de Alimentos" closable="false">
+          <VBox fx:id="vboxGraficosAlimentos" alignment="CENTER" spacing="10.0"/>
+        </Tab>
+        <Tab text="Gráfico de Estado de Ánimo" closable="false">
+          <VBox fx:id="vboxGraficosEstadoAnimo" alignment="CENTER" spacing="10.0"/>
+        </Tab>
+        <Tab text="Gráfico de Estado Físico" closable="false">
+          <VBox fx:id="vboxGraficosEstadoFisico" alignment="CENTER" spacing="10.0"/>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</VBox>
